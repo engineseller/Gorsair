@@ -65,7 +65,8 @@ func gorsair(cmd *cobra.Command, args []string) {
 
 	updateSpinner(w, "Scanning targets...", verbose)
 
-	results, err := scanner.Run()
+	// results, err := scanner.Run()
+	result, warnings, err := scanner.Run()
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)

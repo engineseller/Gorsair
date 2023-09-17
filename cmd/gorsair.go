@@ -83,6 +83,10 @@ func gorsair(cmd *cobra.Command, args []string) {
 
 	var vulnerableTargets []vulnerableDockerAPI
 	for _, host := range results.Hosts {
+		if len(host.Ports) == 0 || len(host.Addresses) == 0 {
+			continue
+		}
+		
 		for _, addr := range host.Addresses {
 			for _, port := range host.Ports {
 				if verbose {

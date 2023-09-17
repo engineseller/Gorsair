@@ -66,7 +66,7 @@ func gorsair(cmd *cobra.Command, args []string) {
 	updateSpinner(w, "Scanning targets...", verbose)
 
 	// results, err := scanner.Run()
-	result, warnings, err := scanner.Run()
+	results, warnings, err := scanner.Run()
 	if len(*warnings) > 0 {
 		log.Printf("run finished with warnings: %s\n", *warnings) // Warnings are non-critical errors from nmap.
 	}

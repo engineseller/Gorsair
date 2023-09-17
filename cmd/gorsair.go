@@ -67,6 +67,9 @@ func gorsair(cmd *cobra.Command, args []string) {
 
 	// results, err := scanner.Run()
 	results, warnings, err := scanner.Run()
+	if len(warnings) > 0 {
+		fmt.Printf("run finished with warnings: %s\n", warnings) // Warnings are non-critical errors from nmap.
+	}
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
